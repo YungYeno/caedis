@@ -56,6 +56,6 @@ def nmap(host):
 
 # Gobuster function to scan target for existing directory's or subdomain.
 def dirb(host, wordlist, mode):
-    command = str(f" gobuster {mode} -u https://{host}/ -w {wordlist}")
+    command = str(f" gobuster {mode} -u http://{host}/ -w {wordlist}")
     result = os.system(command)
     print(f"\n {result}")
