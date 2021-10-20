@@ -35,6 +35,7 @@ def arguments():
     parser.add_argument("-m", "--mode", help="Gobuster mode")
     parser.add_argument("-o", "--output", help="Output results in file")
     parser.add_argument("-w", "--wordlist", help="Path to wordlist")
+    parser.add_argument("-s", "--ssl", help="Is the website secure? yes/no")
     # Initialise.
     args = parser.parse_args()
 
@@ -43,8 +44,9 @@ def arguments():
     mode = args.mode
     output = args.output
     wordlist = args.wordlist
+    ssl = args.ssl
 
-    return host, mode, output, wordlist
+    return host, mode, output, wordlist, ssl
 
 
 # Nmap function to scan target for open ports.
@@ -55,7 +57,10 @@ def nmap(host):
 
 
 # Gobuster function to scan target for existing directory's or subdomain.
-def dirb(host, wordlist, mode):
-    command = str(f" gobuster {mode} -u http://{host}/ -w {wordlist}")
+def dirb(host, wordlist, mode, ssl):
+    if ssl == "yes" or ssl == "y":
+        command = str(f" gobuster {mode} -u https://{host}/ -w {wordlist}")
+    else:
+        command = str(f" gobuster {mode} -u http://{host}/ -w {wordlist}")
     result = os.system(command)
     print(f"\n {result}")
