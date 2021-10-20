@@ -51,7 +51,7 @@ def arguments():
 
 # Nmap function to scan target for open ports.
 def nmap(host):
-    command = str(f" nmap -sV -O {host}")
+    command = str(f" nmap -sV -O {host} --script=vuln")
     result = os.system(command)
     print(f" \n {result} ")
 
