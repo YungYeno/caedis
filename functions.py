@@ -55,6 +55,8 @@ def arguments():
     wordlist = args.wordlist
     ssl = args.ssl
 
+    print(f"Dit is nmap {nmap}")
+
     # Return all the made variables for further use
     return host, nmap, gobuster, nikto, mode, wordlist, nmap, ssl
 
