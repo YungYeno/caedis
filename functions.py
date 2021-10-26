@@ -34,11 +34,11 @@ def arguments():
     parser.add_argument("--nmap", help="Start nmap process")
     parser.add_argument("--gobuster", help="Start gobuster dir")
     parser.add_argument("--nikto", help="Start nikto scan")
-    parser.add_argument("-u", "--url", help="Target IP")
-    parser.add_argument("-m", "--mode", help="Gobuster mode")
-    parser.add_argument("-o", "--output", help="Output results in file")
-    parser.add_argument("-w", "--wordlist", help="Path to wordlist")
-    parser.add_argument("-s", "--ssl", help="Is the website secure? yes/no")
+    parser.add_argument("--url", help="Target IP")
+    parser.add_argument("--mode", help="Gobuster mode")
+    parser.add_argument("--output", help="Output results in file")
+    parser.add_argument("--wordlist", help="Path to wordlist")
+    parser.add_argument("--ssl", help="Is the website secure? yes/no")
     # Initialise.
     args = parser.parse_args()
 
