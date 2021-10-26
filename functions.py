@@ -55,10 +55,11 @@ def arguments():
     wordlist = args.wordlist
     ssl = args.ssl
 
-    print(f"Dit is nmap {nmap}")
-
     # Return all the made variables for further use
     return host, nmap, gobuster, nikto, mode, wordlist, nmap, ssl
+
+# def cloudflare_check():
+#     command = dig {}
 
 
 # Nmap function to scan target for open ports.
@@ -82,5 +83,3 @@ def nikto_scan(host):
     command = str(f" nikto -h {host}")
     result = os.system(command)
     print(f"\n {result}")
-
-# TODO: ZORG ERVOOR DAT APARTR FUNCTIES KUNNEN WORDEN GESTART DOOR DE GEBRUIKER!! (python3 caedis.py --nmap --gobuster --nikto -u 1.1.1.1 -s yes -w /path/to/wordlist)
