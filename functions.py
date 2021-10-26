@@ -25,7 +25,7 @@ def intro():
 ░ ░               ░  ░      ░  ░      ░        ░           ░  
 ░                                   ░                 
 
-                                        {WHITE}-- Made with ❤️  by YY""")
+                                        {WHITE}-- Made with {RED}❤{WHITE}️ by YY""")
 
 
 def arguments():
