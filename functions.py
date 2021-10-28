@@ -47,8 +47,14 @@ def arguments():
 
     # Function values to variables
     nmap = args.nmap
+    if nmap is None:
+        nmap = True
     gobuster = args.gobuster
+    if gobuster is None:
+        gobuster = True
     nikto = args.nikto
+    if nikto is None:
+        nikto = True
 
     # Gobuster command arguments
     mode = args.mode
@@ -57,6 +63,7 @@ def arguments():
 
     # Return all the made variables for further use
     return host, nmap, gobuster, nikto, mode, wordlist, nmap, ssl
+
 
 # def cloudflare_check():
 #     command = dig {}
